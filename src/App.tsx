@@ -1,6 +1,12 @@
+import GlobalStyle from "./styles/global";
+import { ThemeProvider } from 'styled-components'
+import light from "./styles/themes/light";
+
 function App() {
   return (
-    <h1>Hello world</h1>
+    <ThemeProvider theme={light}>
+      <GlobalStyle />  
+    </ThemeProvider>
   );
 }
 
