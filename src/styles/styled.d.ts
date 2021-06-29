@@ -8,6 +8,8 @@ declare module 'styled-components' {
       secundary: string;
 
       text: string;
+      textClear: string;
+      textLink: string;
 
       background: string;
       backgroundButtonGoogle: string;

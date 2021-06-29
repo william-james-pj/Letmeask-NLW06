@@ -5,6 +5,8 @@ const light = {
     secundary: '',
 
     text: '#29292e',
+    textClear: '#737380',
+    textLink: '#e559f9',
 
     background: '#f8f8f8',
     backgroundButtonGoogle: '#ea4335',
