@@ -2,6 +2,8 @@ import GlobalStyle from './styles/global';
 import { ThemeProvider } from 'styled-components';
 import light from './styles/themes/light';
 
+import { AuthContextProvider } from './contexts/AuthContext';
+
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import { Home } from './pages/Home';
@@ -12,8 +14,10 @@ function App() {
     <ThemeProvider theme={light}>
       <GlobalStyle />
       <BrowserRouter>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/rooms/new" component={NewRoom} />
+        <AuthContextProvider>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/rooms/new" component={NewRoom} />
+        </AuthContextProvider>
       </BrowserRouter>
     </ThemeProvider>
   );
