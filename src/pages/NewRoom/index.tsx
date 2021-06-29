@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import illustrationImg from '../../assets/images/illustration.svg';
 import logoImg from '../../assets/images/logo.svg';
 
@@ -16,7 +18,7 @@ import {
   Input,
 } from '../Home/styles';
 
-import { Title, TextMain, Link } from './styles';
+import { Title, TextMain } from './styles';
 
 export function NewRoom() {
   return (
@@ -39,7 +41,7 @@ export function NewRoom() {
           </Form>
           <TextMain>
             Quer entrar em uma nova sala já existente?
-            <Link href="#">Clique aqui</Link>
+            <Link to="/"> Clique aqui</Link>
           </TextMain>
         </MainContent>
       </Main>
