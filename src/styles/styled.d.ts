@@ -13,6 +13,7 @@ declare module 'styled-components' {
 
       background: string;
       backgroundButtonGoogle: string;
+      borderColorHeader: string;
 
       borderColorInput: string;
 

@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  padding: 24px;
-  border-radius: 1px solid ${(props) => props.theme.colors.borderColorInput};
-`;
+interface Ibtn {
+  active: boolean;
+}
 
-export const Header = styled.header``;
+export const Container = styled.div``;
+
+export const Header = styled.header`
+  padding: 24px;
+  border-bottom: 1px solid ${(props) => props.theme.colors.borderColorHeader};
+`;
 
 export const Content = styled.div`
   max-width: 1120px;
@@ -25,7 +29,7 @@ export const Main = styled.main`
 `;
 
 export const TitleContainer = styled.div`
-  margin: 32px 0 2px;
+  margin: 32px 0 24px;
   display: flex;
   align-items: center;
 `;
@@ -53,7 +57,7 @@ export const TextArea = styled.textarea`
   border: 0;
   padding: 16px;
   border-radius: 8px;
-  background: ${(props) => props.theme.colors.background};
+  background: ${(props) => props.theme.colors.white};
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   resize: vertical;
   min-height: 130px;
@@ -98,4 +102,29 @@ export const UserName = styled.span`
   color: ${(props) => props.theme.colors.text};
   font-weight: 500;
   font-size: 14px;
+`;
+
+export const QuestionList = styled.div`
+  margin: 32px 0;
+`;
+
+export const ButtonLike = styled.button<Ibtn>`
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  transition: filter 0.2s;
+
+  display: flex;
+  align-items: flex-end;
+  color: ${(props) =>
+    props.active ? props.theme.colors.primary : props.theme.colors.textClear};
+  gap: 8px;
+
+  svg path {
+    stroke: ${(props) => props.theme.colors.primary};
+  }
+
+  :hover {
+    filter: brightness(0.7);
+  }
 `;

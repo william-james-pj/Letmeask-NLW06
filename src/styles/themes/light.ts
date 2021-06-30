@@ -12,6 +12,7 @@ const light = {
     backgroundButtonGoogle: '#ea4335',
 
     borderColorInput: '#a8a8b3',
+    borderColorHeader: '#e2e2e2',
 
     white: '#fff',
   },
