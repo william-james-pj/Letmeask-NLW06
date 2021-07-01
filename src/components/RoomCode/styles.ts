@@ -5,15 +5,15 @@ export const Button = styled.button`
   border-radius: 8px;
   overflow: hidden;
 
-  background: ${(props) => props.theme.colors.white};
-  border: 1px solid ${(props) => props.theme.colors.primary};
+  background: ${(props) => props.theme.colors.primary};
+  border: 1px solid ${(props) => props.theme.colors.secundary};
   cursor: pointer;
 
   display: flex;
 `;
 
 export const Content = styled.div`
-  background: ${(props) => props.theme.colors.primary};
+  background: ${(props) => props.theme.colors.secundary};
   padding: 0 12px;
   display: flex;
   justify-content: center;
@@ -30,4 +30,5 @@ export const Span = styled.span`
   width: 230px;
   font-size: 14px;
   font-weight: 500;
+  color: ${(props) => props.theme.colors.text};
 `;

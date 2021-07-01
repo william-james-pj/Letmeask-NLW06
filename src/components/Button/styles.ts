@@ -11,12 +11,14 @@ export const ButtonStyled = styled.button<IBtn>`
   border: 0;
 
   background: ${(props) =>
-    props.isOutlined ? props.theme.colors.white : props.theme.colors.primary};
+    props.isOutlined
+      ? props.theme.colors.primary
+      : props.theme.colors.secundary};
   color: ${(props) =>
-    props.isOutlined ? props.theme.colors.primary : props.theme.colors.white};
+    props.isOutlined ? props.theme.colors.secundary : props.theme.colors.white};
   padding: 0 32px;
   border: ${(props) =>
-    props.isOutlined ? `1px solid ${props.theme.colors.primary}` : 'none'};
+    props.isOutlined ? `1px solid ${props.theme.colors.secundary}` : 'none'};
 
   display: flex;
   justify-content: center;

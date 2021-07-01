@@ -1,20 +1,22 @@
 const light = {
   title: 'light',
   colors: {
-    primary: '#835afd',
-    secundary: '',
+    primary: 'rgba(248, 248, 248, 1)',
+    secundary: 'rgba(252, 151, 84, 1)',
 
-    text: '#29292e',
-    textClear: '#737380',
-    textLink: '#e559f9',
+    interactive: 'rgba(255, 171, 115, 0.85)',
+    disabled: 'rgba(168, 168, 179, 1)',
+    divider: 'rgba(226, 226, 226, 1)',
 
-    background: '#f8f8f8',
-    backgroundButtonGoogle: '#ea4335',
+    boxNone: 'rgba(248, 248, 248, 1)',
+    boxSelect: 'rgba(226, 226, 226, 1)',
+    boxDelete: 'rgba(248, 248, 248, 1)',
 
-    borderColorInput: '#a8a8b3',
-    borderColorHeader: '#e2e2e2',
+    text: 'rgba(41, 41, 46, 1)',
 
-    white: '#fff',
+    white: '#FFF',
+
+    buttonGoogle: 'rgba(234, 67, 53, 1)',
   },
 };
 

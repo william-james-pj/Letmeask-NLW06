@@ -6,6 +6,7 @@ import { database } from '../../services/firebase';
 import { Button } from '../../components/Button';
 import { RoomCode } from '../../components/RoomCode';
 import { Question } from '../../components/Question';
+import { IconColorMode } from '../../components/IconColorMode';
 
 import logoImg from '../../assets/images/logo.svg';
 import deleteImg from '../../assets/images/delete.svg';
@@ -16,6 +17,7 @@ import {
   Container,
   Header,
   Content,
+  ContainerFlex,
   Logo,
   Main,
   TitleContainer,
@@ -24,7 +26,7 @@ import {
   QuestionList,
 } from '../Room/styles';
 
-import { ContainerFlex, ButtonMsg, ButtonMsgImg } from './sytles';
+import { ButtonMsg, ButtonMsgImg } from './sytles';
 
 type RoomParams = {
   id: string;
@@ -67,7 +69,10 @@ export function AdminRoom() {
     <Container>
       <Header>
         <Content>
-          <Logo src={logoImg} alt={'Letmeask'} />
+          <ContainerFlex>
+            <Logo src={logoImg} alt={'Letmeask'} />
+            <IconColorMode />
+          </ContainerFlex>
           <ContainerFlex>
             <RoomCode code={roomId} />
             <Button isOutlined onClick={handleEndRoom}>

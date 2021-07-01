@@ -7,17 +7,19 @@ declare module 'styled-components' {
       primary: string;
       secundary: string;
 
+      interactive: string;
+      disabled: string;
+      divider: string;
+
+      boxNone: string;
+      boxSelect: string;
+      boxDelete: string;
+
       text: string;
-      textClear: string;
-      textLink: string;
-
-      background: string;
-      backgroundButtonGoogle: string;
-      borderColorHeader: string;
-
-      borderColorInput: string;
 
       white: string;
+
+      buttonGoogle: string;
     };
   }
 }

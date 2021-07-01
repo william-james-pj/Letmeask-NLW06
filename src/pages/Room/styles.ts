@@ -8,7 +8,7 @@ export const Container = styled.div``;
 
 export const Header = styled.header`
   padding: 24px;
-  border-bottom: 1px solid ${(props) => props.theme.colors.borderColorHeader};
+  border-bottom: 1px solid ${(props) => props.theme.colors.divider};
 `;
 
 export const Content = styled.div`
@@ -17,6 +17,16 @@ export const Content = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+`;
+
+export const ContainerFlex = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  button {
+    height: 40px;
+  }
 `;
 
 export const Logo = styled.img`
@@ -38,16 +48,18 @@ export const Title = styled.h1`
   font-family: 'Poppins', sans-serif;
   font-size: 24px;
   color: ${(props) => props.theme.colors.text};
+  user-select: none;
 `;
 
 export const QtdQuestions = styled.span`
   margin-left: 16px;
-  background: ${(props) => props.theme.colors.textLink};
+  background: ${(props) => props.theme.colors.interactive};
   border-radius: 9999px;
   padding: 8px 16px;
   color: ${(props) => props.theme.colors.white};
   font-weight: 500px;
   font-size: 14px;
+  user-select: none;
 `;
 
 export const Form = styled.form``;
@@ -57,10 +69,11 @@ export const TextArea = styled.textarea`
   border: 0;
   padding: 16px;
   border-radius: 8px;
-  background: ${(props) => props.theme.colors.white};
+  background: ${(props) => props.theme.colors.divider};
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   resize: vertical;
   min-height: 130px;
+  color: ${(props) => props.theme.colors.text};
 `;
 
 export const FormFooter = styled.div`
@@ -72,7 +85,7 @@ export const FormFooter = styled.div`
 
 export const SpanForm = styled.span`
   font-size: 14px;
-  color: ${(props) => props.theme.colors.textClear};
+  color: ${(props) => props.theme.colors.disabled};
   font-weight: 500;
 `;
 
@@ -102,6 +115,7 @@ export const UserName = styled.span`
   color: ${(props) => props.theme.colors.text};
   font-weight: 500;
   font-size: 14px;
+  user-select: none;
 `;
 
 export const QuestionList = styled.div`
@@ -117,11 +131,11 @@ export const ButtonLike = styled.button<Ibtn>`
   display: flex;
   align-items: flex-end;
   color: ${(props) =>
-    props.active ? props.theme.colors.primary : props.theme.colors.textClear};
+    props.active ? props.theme.colors.secundary : props.theme.colors.disabled};
   gap: 8px;
 
   svg path {
-    stroke: ${(props) => props.theme.colors.primary};
+    stroke: ${(props) => props.theme.colors.secundary};
   }
 
   :hover {

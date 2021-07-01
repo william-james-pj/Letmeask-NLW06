@@ -9,7 +9,7 @@ export const Container = styled.div`
 export const Aside = styled.aside`
   flex: 7;
 
-  background: ${(props) => props.theme.colors.primary};
+  background: ${(props) => props.theme.colors.secundary};
   color: ${(props) => props.theme.colors.white};
 
   display: flex;
@@ -27,13 +27,15 @@ export const Strong = styled.strong`
   font: 700 36px 'Poppins', sans-serif;
   line-height: 42px;
   margin-top: 16px;
+  user-select: none;
 `;
 
 export const TextAside = styled.p`
   font-size: 24px;
   line-height: 32px;
   margin-top: 16px;
-  color: ${(props) => props.theme.colors.background};
+  color: ${(props) => props.theme.colors.primary};
+  user-select: none;
 `;
 
 export const Main = styled.main`
@@ -64,7 +66,7 @@ export const ButtonMain = styled.button`
   height: 50px;
   border-radius: 8px;
   font-weight: 500;
-  background: ${(props) => props.theme.colors.backgroundButtonGoogle};
+  background: ${(props) => props.theme.colors.buttonGoogle};
   color: ${(props) => props.theme.colors.white};
 
   display: flex;
@@ -87,7 +89,8 @@ export const ImgButton = styled.img`
 
 export const Separator = styled.div`
   font-size: 16px;
-  color: ${(props) => props.theme.colors.borderColorInput};
+  color: ${(props) => props.theme.colors.disabled};
+  user-select: none;
 
   margin: 32px 0;
   display: flex;
@@ -97,7 +100,7 @@ export const Separator = styled.div`
     content: '';
     flex: 1;
     height: 1px;
-    background: ${(props) => props.theme.colors.borderColorInput};
+    background: ${(props) => props.theme.colors.disabled};
     margin-left: 16px;
   }
 
@@ -105,7 +108,7 @@ export const Separator = styled.div`
     content: '';
     flex: 1;
     height: 1px;
-    background: ${(props) => props.theme.colors.borderColorInput};
+    background: ${(props) => props.theme.colors.disabled};
     margin-right: 16px;
   }
 `;
@@ -123,5 +126,5 @@ export const Input = styled.input`
   border-radius: 8px;
   padding: 0 16px;
   background: ${(props) => props.theme.colors.white};
-  border: 1px solid ${(props) => props.theme.colors.borderColorInput};
+  border: 1px solid ${(props) => props.theme.colors.disabled};
 `;

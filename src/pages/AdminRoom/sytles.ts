@@ -1,14 +1,5 @@
 import styled from 'styled-components';
 
-export const ContainerFlex = styled.div`
-  display: flex;
-  gap: 16px;
-
-  button {
-    height: 40px;
-  }
-`;
-
 export const ButtonMsg = styled.button`
   border: 0;
   background: transparent;

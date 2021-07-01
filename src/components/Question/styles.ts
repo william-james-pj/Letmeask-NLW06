@@ -16,16 +16,17 @@ export const Container = styled.div<QuestionsProps>`
 
   background: ${(props) =>
     props.isHighlighted
-      ? '#faf0ff'
+      ? props.theme.colors.boxNone
       : props.isAnswered
-      ? '#DBDCDD'
-      : props.theme.colors.white};
+      ? props.theme.colors.boxSelect
+      : props.theme.colors.boxDelete};
   border: ${(props) =>
-    props.isHighlighted ? `1px solid ${props.theme.colors.primary}` : 'none'};
+    props.isHighlighted ? `1px solid ${props.theme.colors.secundary}` : 'none'};
 `;
 
 export const QuestionText = styled.p`
   color: ${(props) => props.theme.colors.text};
+  user-select: none;
 `;
 
 export const Footer = styled.footer`
@@ -44,12 +45,14 @@ export const UserImg = styled.img`
   width: 32px;
   height: 32px;
   border-radius: 50%;
+  user-select: none;
 `;
 
 export const UserName = styled.span`
   margin-left: 8px;
-  color: ${(props) => props.theme.colors.textClear};
+  color: ${(props) => props.theme.colors.disabled};
   font-size: 14px;
+  user-select: none;
 `;
 
 export const Buttons = styled.div`

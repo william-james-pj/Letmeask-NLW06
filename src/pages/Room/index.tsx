@@ -8,6 +8,7 @@ import { database } from '../../services/firebase';
 import { Button } from '../../components/Button';
 import { RoomCode } from '../../components/RoomCode';
 import { Question } from '../../components/Question';
+import { IconColorMode } from '../../components/IconColorMode';
 
 import logoImg from '../../assets/images/logo.svg';
 
@@ -15,6 +16,7 @@ import {
   Container,
   Header,
   Content,
+  ContainerFlex,
   Logo,
   Main,
   TitleContainer,
@@ -86,7 +88,10 @@ export function Room() {
     <Container>
       <Header>
         <Content>
-          <Logo src={logoImg} alt={'Letmeask'} />
+          <ContainerFlex>
+            <Logo src={logoImg} alt={'Letmeask'} />
+            <IconColorMode />
+          </ContainerFlex>
           <RoomCode code={roomId} />
         </Content>
       </Header>
