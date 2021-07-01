@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  background: ${(props) => props.theme.colors.white};
+type QuestionsProps = {
+  isAnswered: boolean;
+  isHighlighted: boolean;
+};
+
+export const Container = styled.div<QuestionsProps>`
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   padding: 24px;
@@ -9,6 +13,15 @@ export const Container = styled.div`
   & + & {
     margin-top: 8px;
   }
+
+  background: ${(props) =>
+    props.isHighlighted
+      ? '#faf0ff'
+      : props.isAnswered
+      ? '#DBDCDD'
+      : props.theme.colors.white};
+  border: ${(props) =>
+    props.isHighlighted ? `1px solid ${props.theme.colors.primary}` : 'none'};
 `;
 
 export const QuestionText = styled.p`
@@ -39,4 +52,7 @@ export const UserName = styled.span`
   font-size: 14px;
 `;
 
-export const Buttons = styled.div``;
+export const Buttons = styled.div`
+  display: flex;
+  gap: 16px;
+`;

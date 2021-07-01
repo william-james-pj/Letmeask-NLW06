@@ -9,7 +9,7 @@ export const ContainerFlex = styled.div`
   }
 `;
 
-export const ButtonDelete = styled.button`
+export const ButtonMsg = styled.button`
   border: 0;
   background: transparent;
   cursor: pointer;
@@ -20,4 +20,4 @@ export const ButtonDelete = styled.button`
   }
 `;
 
-export const ButtonDeleteImg = styled.img``;
+export const ButtonMsgImg = styled.img``;
