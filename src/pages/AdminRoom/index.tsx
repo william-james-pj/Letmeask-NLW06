@@ -7,6 +7,7 @@ import { Button } from '../../components/Button';
 import { RoomCode } from '../../components/RoomCode';
 import { Question } from '../../components/Question';
 import { IconColorMode } from '../../components/IconColorMode';
+import { NotQuestions } from '../../components/NotQuestions';
 
 import logoImg from '../../assets/images/logo.svg';
 import deleteImg from '../../assets/images/delete.svg';
@@ -89,47 +90,57 @@ export function AdminRoom() {
             <QtdQuestions>{questions.length} pergunta(s)</QtdQuestions>
           )}
         </TitleContainer>
+        {questions.length === 0 && (
+          <NotQuestions
+            title="Nenhuma pergunta por aqui..."
+            text="Envie o código desta sala para seus amigos e"
+            subText="comece a responder perguntas!"
+          />
+        )}
         <QuestionList>
-          {questions.map((question) => {
-            return (
-              <Question
-                key={question.id}
-                content={question.content}
-                author={question.author}
-                isAnswered={question.isAnswered}
-                isHighlighted={question.isHighlighted}
-              >
-                {!question.isAnswered && (
-                  <>
-                    <ButtonMsg
-                      type="button"
-                      onClick={() => handleCheckQuestionAsAnswered(question.id)}
-                    >
-                      <ButtonMsgImg
-                        src={checkImg}
-                        alt="Marcar pergunta como respondida"
-                      />
-                    </ButtonMsg>
-                    <ButtonMsg
-                      type="button"
-                      onClick={() => handleHighlightQuestion(question.id)}
-                    >
-                      <ButtonMsgImg
-                        src={answerImg}
-                        alt="Dar destaque à pergunta"
-                      />
-                    </ButtonMsg>
-                  </>
-                )}
-                <ButtonMsg
-                  type="button"
-                  onClick={() => handleDeleteQuestion(question.id)}
+          {questions.length > 0 &&
+            questions.map((question) => {
+              return (
+                <Question
+                  key={question.id}
+                  content={question.content}
+                  author={question.author}
+                  isAnswered={question.isAnswered}
+                  isHighlighted={question.isHighlighted}
                 >
-                  <ButtonMsgImg src={deleteImg} alt="Remover pergunta" />
-                </ButtonMsg>
-              </Question>
-            );
-          })}
+                  {!question.isAnswered && (
+                    <>
+                      <ButtonMsg
+                        type="button"
+                        onClick={() =>
+                          handleCheckQuestionAsAnswered(question.id)
+                        }
+                      >
+                        <ButtonMsgImg
+                          src={checkImg}
+                          alt="Marcar pergunta como respondida"
+                        />
+                      </ButtonMsg>
+                      <ButtonMsg
+                        type="button"
+                        onClick={() => handleHighlightQuestion(question.id)}
+                      >
+                        <ButtonMsgImg
+                          src={answerImg}
+                          alt="Dar destaque à pergunta"
+                        />
+                      </ButtonMsg>
+                    </>
+                  )}
+                  <ButtonMsg
+                    type="button"
+                    onClick={() => handleDeleteQuestion(question.id)}
+                  >
+                    <ButtonMsgImg src={deleteImg} alt="Remover pergunta" />
+                  </ButtonMsg>
+                </Question>
+              );
+            })}
         </QuestionList>
       </Main>
     </Container>
