@@ -40,6 +40,14 @@ export function useRoom(roomId: string) {
   const [questions, setQuestions] = useState<QuestionType[]>([]);
   const [title, setTitle] = useState('');
 
+  function organizeQuestions(question1: QuestionType, question2: QuestionType) {
+    if (question2.isHighlighted && !question2.isAnswered) return 1;
+    if (question1.isHighlighted && !question1.isAnswered) return -1;
+    if (question2.isAnswered && !question1.isAnswered) return -1;
+    if (question1.isAnswered && !question2.isAnswered) return 1;
+    return 0;
+  }
+
   useEffect(() => {
     const roomRef = database.ref(`rooms/${roomId}`);
 
@@ -62,6 +70,8 @@ export function useRoom(roomId: string) {
           };
         },
       );
+
+      parsedQuestions.sort(organizeQuestions);
 
       setTitle(databaseRoom.title);
       setQuestions(parsedQuestions);
