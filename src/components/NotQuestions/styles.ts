@@ -1,15 +1,20 @@
 import styled from 'styled-components';
+import { respondToDown } from '../../config/respondTo';
 
 export const Container = styled.div`
   width: 100%;
 
-  padding-top: 1.5rem;
+  margin-top: 1.5rem;
   text-align: center;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  ${respondToDown.xs`
+    margin-top: 2.5rem;
+  `}
 `;
 export const Img = styled.img`
   max-height: 150px;

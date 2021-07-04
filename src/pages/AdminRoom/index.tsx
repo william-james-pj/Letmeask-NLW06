@@ -18,7 +18,7 @@ import {
   Container,
   Header,
   Content,
-  ContainerFlex,
+  ContainerButtons,
   Logo,
   Main,
   TitleContainer,
@@ -70,18 +70,17 @@ export function AdminRoom() {
     <Container>
       <Header>
         <Content>
-          <ContainerFlex>
-            <Logo src={logoImg} alt={'Letmeask'} />
-            <IconColorMode />
-          </ContainerFlex>
-          <ContainerFlex>
-            <RoomCode code={roomId} />
-            <Button isOutlined onClick={handleEndRoom}>
-              Encerrar sala
-            </Button>
-          </ContainerFlex>
+          <Logo src={logoImg} alt={'Letmeask'} />
+          <IconColorMode />
         </Content>
       </Header>
+
+      <ContainerButtons>
+        <RoomCode code={roomId} />
+        <Button isOutlined onClick={handleEndRoom}>
+          Encerrar sala
+        </Button>
+      </ContainerButtons>
 
       <Main>
         <TitleContainer>

@@ -10,6 +10,7 @@ export default createGlobalStyle`
   body {
     background: ${(props) => props.theme.colors.primary};
     color: ${(props) => props.theme.colors.text};
+    font-size: 16px;
   }
 
   body, input, button, textarea {

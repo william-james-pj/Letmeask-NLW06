@@ -1,14 +1,20 @@
 import styled from 'styled-components';
+import * as fonts from '../../config/fonts';
+import { respondToDown } from '../../config/respondTo';
 
 export const Container = styled.div`
-  display: flex;
-  align-items: stretch;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-rows: 1fr;
   height: 100vh;
+
+  ${respondToDown.xs`
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.9fr 1.1fr;
+  `}
 `;
 
 export const Aside = styled.aside`
-  flex: 7;
-
   background: ${(props) => props.theme.colors.secundary};
   color: ${(props) => props.theme.colors.white};
 
@@ -16,36 +22,56 @@ export const Aside = styled.aside`
   flex-direction: column;
   justify-content: center;
 
-  padding: 120px 80px;
+  padding: 100px 80px;
+
+  ${respondToDown.xs`
+    padding: 40px 60px;
+  `}
 `;
 
 export const ImgBackground = styled.img`
-  max-width: 320px;
+  max-width: 200px;
+
+  ${respondToDown.xs`
+    max-width: 150px;
+  `}
 `;
 
 export const Strong = styled.strong`
-  font: 700 36px 'Poppins', sans-serif;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  font-size: ${fonts.xxl};
   line-height: 42px;
   margin-top: 16px;
   user-select: none;
+
+  ${respondToDown.xs`
+    font-size: ${fonts.xl};
+  `}
 `;
 
 export const TextAside = styled.p`
-  font-size: 24px;
+  font-size: ${fonts.normal};
   line-height: 32px;
   margin-top: 16px;
   color: ${(props) => props.theme.colors.primary};
   user-select: none;
+
+  ${respondToDown.xs`
+    font-size: ${fonts.normal};
+  `}
 `;
 
 export const Main = styled.main`
-  flex: 8;
-
   padding: 0 32px;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  ${respondToDown.xs`
+    padding: 40px 40px;
+  `}
 `;
 
 export const MainContent = styled.div`
@@ -66,6 +92,7 @@ export const ButtonMain = styled.button`
   height: 50px;
   border-radius: 8px;
   font-weight: 500;
+  font-size: ${fonts.normal};
   background: ${(props) => props.theme.colors.buttonGoogle};
   color: ${(props) => props.theme.colors.white};
 
@@ -81,6 +108,10 @@ export const ButtonMain = styled.button`
   :hover {
     filter: brightness(0.9);
   }
+
+  ${respondToDown.xs`
+    font-size: ${fonts.sm};
+  `}
 `;
 
 export const ImgButton = styled.img`
@@ -88,7 +119,7 @@ export const ImgButton = styled.img`
 `;
 
 export const Separator = styled.div`
-  font-size: 16px;
+  font-size: ${fonts.normal};
   color: ${(props) => props.theme.colors.disabled};
   user-select: none;
 
@@ -111,6 +142,18 @@ export const Separator = styled.div`
     background: ${(props) => props.theme.colors.disabled};
     margin-right: 16px;
   }
+
+  ${respondToDown.xs`
+    font-size: ${fonts.sm};
+
+    ::after {
+      margin-left: 10px;
+    }
+
+    ::before { 
+      margin-right: 10px;
+    }
+  `}
 `;
 
 export const Form = styled.form`

@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import * as fonts from '../../config/fonts';
+import { respondToDown } from '../../config/respondTo';
 
 interface Ibtn {
   active: boolean;
@@ -19,23 +21,35 @@ export const Content = styled.div`
   align-items: center;
 `;
 
-export const ContainerFlex = styled.div`
+export const ContainerButtons = styled.div`
+  max-width: 800px;
+  margin: 30px auto;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   gap: 16px;
+  align-items: center;
+  justify-content: flex-end;
 
-  button {
-    height: 40px;
-  }
+  ${respondToDown.md`
+     margin: 30px 20px;
+  `}
 `;
 
 export const Logo = styled.img`
   max-height: 45px;
+
+  ${respondToDown.xs`
+    max-height: 35px;
+  `}
 `;
 
 export const Main = styled.main`
   max-width: 800px;
   margin: 0 auto;
+
+  ${respondToDown.md`
+    padding: 0 20px;
+  `}
 `;
 
 export const TitleContainer = styled.div`
@@ -46,7 +60,7 @@ export const TitleContainer = styled.div`
 
 export const Title = styled.h1`
   font-family: 'Poppins', sans-serif;
-  font-size: 24px;
+  font-size: ${fonts.lg};
   color: ${(props) => props.theme.colors.text};
   user-select: none;
 `;
@@ -58,7 +72,7 @@ export const QtdQuestions = styled.span`
   padding: 8px 16px;
   color: ${(props) => props.theme.colors.white};
   font-weight: 500px;
-  font-size: 14px;
+  font-size: ${fonts.sm};
   user-select: none;
 `;
 
@@ -84,7 +98,7 @@ export const FormFooter = styled.div`
 `;
 
 export const SpanForm = styled.span`
-  font-size: 14px;
+  font-size: ${fonts.sm};
   color: ${(props) => props.theme.colors.disabled};
   font-weight: 500;
 `;
@@ -94,7 +108,7 @@ export const ButoonForm = styled.button`
   border: 0;
   color: ${(props) => props.theme.colors.primary};
   text-decoration: underline;
-  font-size: 14px;
+  font-size: ${fonts.sm};
   font-weight: 500;
   cursor: pointer;
 `;
@@ -114,7 +128,7 @@ export const UserName = styled.span`
   margin-left: 8px;
   color: ${(props) => props.theme.colors.text};
   font-weight: 500;
-  font-size: 14px;
+  font-size: ${fonts.sm};
   user-select: none;
 `;
 

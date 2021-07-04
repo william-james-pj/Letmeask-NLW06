@@ -17,7 +17,7 @@ import {
   Container,
   Header,
   Content,
-  ContainerFlex,
+  ContainerButtons,
   Logo,
   Main,
   TitleContainer,
@@ -74,6 +74,10 @@ export function Room() {
     questionId: string,
     likeId: string | undefined,
   ) {
+    if (!user) {
+      throw new Error('You must be logged in');
+    }
+
     if (likeId) {
       await database
         .ref(`rooms/${roomId}/questions/${questionId}/likes/${likeId}`)
@@ -89,13 +93,14 @@ export function Room() {
     <Container>
       <Header>
         <Content>
-          <ContainerFlex>
-            <Logo src={logoImg} alt={'Letmeask'} />
-            <IconColorMode />
-          </ContainerFlex>
-          <RoomCode code={roomId} />
+          <Logo src={logoImg} alt={'Letmeask'} />
+          <IconColorMode />
         </Content>
       </Header>
+
+      <ContainerButtons>
+        <RoomCode code={roomId} />
+      </ContainerButtons>
 
       <Main>
         <TitleContainer>
