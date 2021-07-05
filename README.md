@@ -31,7 +31,7 @@
 
 ## Sobre o projeto
 
-![Letmeask-screenshot](.github/cover.svg)
+![Letmeask-screenshot](.github/cover.png)
 
 <br />
 Letmeask é perfeito para criadores de conteúdos poderem criar salas de Q&A com o seu público, de uma forma muito organizada e democrática.
