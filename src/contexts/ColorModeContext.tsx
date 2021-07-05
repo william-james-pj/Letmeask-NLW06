@@ -1,5 +1,5 @@
 import { createContext, ReactNode } from 'react';
-import { DefaultTheme } from 'styled-components';
+import { DefaultTheme, ThemeProvider } from 'styled-components';
 import { usePersistedState } from '../hooks/usePersistedState';
 import dark from '../styles/themes/dark';
 import light from '../styles/themes/light';
@@ -24,7 +24,7 @@ export function ColorModeContext(props: ColorContextProviderProps) {
 
   return (
     <ColorContext.Provider value={{ theme, toggleTheme }}>
-      {props.children}
+      <ThemeProvider theme={theme}>{props.children}</ThemeProvider>
     </ColorContext.Provider>
   );
 }
