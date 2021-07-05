@@ -12,8 +12,9 @@ export function Routes() {
     <Switch>
       <MyRoute exact path="/" component={Home} />
       <MyRoute exact path="/rooms/new" component={NewRoom} />
-      <MyRoute exact path="/room/:id" component={Room} />
-      <MyRoute exact path="/admin/room/:id" component={AdminRoom} />
+      <MyRoute exact path="/rooms/:id" component={Room} />
+      <MyRoute exact path="/admin/rooms/:id" component={AdminRoom} />
+      <MyRoute path="*" component={Home} />
     </Switch>
   );
 }
