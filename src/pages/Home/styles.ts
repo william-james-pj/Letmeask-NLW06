@@ -83,8 +83,13 @@ export const MainContent = styled.div`
   text-align: center;
 `;
 
-export const ImgLogo = styled.img`
-  align-self: center;
+export const Logo = styled.p`
+  font-size: ${fonts.xxl};
+  color: ${(props) => props.theme.colors.text};
+  user-select: none;
+  ${respondToDown.xs`
+  
+  `}
 `;
 
 export const ButtonMain = styled.button`

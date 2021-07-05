@@ -2,7 +2,6 @@ import { FormEvent, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
 import illustrationImg from '../../assets/images/illustration.svg';
-import logoImg from '../../assets/images/logo.svg';
 
 import { Button } from '../../components/Button';
 import { useAuth } from '../../hooks/useAuth';
@@ -16,7 +15,7 @@ import {
   TextAside,
   Main,
   MainContent,
-  ImgLogo,
+  Logo,
   Form,
   Input,
 } from '../Home/styles';
@@ -55,7 +54,7 @@ export function NewRoom() {
       </Aside>
       <Main>
         <MainContent>
-          <ImgLogo src={logoImg} alt="Letmeask" />
+          <Logo>Letmeask</Logo>
           <Title>Criar uma nova sala</Title>
           <Form onSubmit={handleCreateRoom}>
             <Input

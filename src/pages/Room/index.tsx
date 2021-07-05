@@ -13,8 +13,6 @@ import { IconColorMode } from '../../components/IconColorMode';
 import { NotQuestions } from '../../components/NotQuestions';
 import { Loader } from '../../components/Loader';
 
-import logoImg from '../../assets/images/logo.svg';
-
 import {
   Container,
   Header,
@@ -105,7 +103,7 @@ export function Room() {
     <Container>
       <Header>
         <Content>
-          <Logo src={logoImg} alt={'Letmeask'} />
+          <Logo>Letmeask</Logo>
           <IconColorMode />
         </Content>
       </Header>
@@ -116,7 +114,7 @@ export function Room() {
 
       <Main>
         <TitleContainer>
-          <Title>Sala {title}</Title>
+          <Title>Sala: {title}</Title>
           {questions.length > 0 && (
             <QtdQuestions>{questions.length} pergunta(s)</QtdQuestions>
           )}

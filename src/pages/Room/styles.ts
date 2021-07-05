@@ -35,11 +35,12 @@ export const ContainerButtons = styled.div`
   `}
 `;
 
-export const Logo = styled.img`
-  max-height: 45px;
-
+export const Logo = styled.p`
+  font-size: ${fonts.lg};
+  color: ${(props) => props.theme.colors.text};
+  user-select: none;
   ${respondToDown.xs`
-    max-height: 35px;
+    
   `}
 `;
 

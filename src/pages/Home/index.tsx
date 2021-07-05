@@ -6,7 +6,6 @@ import { database } from '../../services/firebase';
 import { toast } from 'react-toastify';
 
 import illustrationImg from '../../assets/images/illustration.svg';
-import logoImg from '../../assets/images/logo.svg';
 import googleIconImg from '../../assets/images/google-icon.svg';
 
 import { Button } from '../../components/Button';
@@ -19,7 +18,7 @@ import {
   TextAside,
   Main,
   MainContent,
-  ImgLogo,
+  Logo,
   ButtonMain,
   ImgButton,
   Separator,
@@ -72,7 +71,7 @@ export function Home() {
       </Aside>
       <Main>
         <MainContent>
-          <ImgLogo src={logoImg} alt="Letmeask" />
+          <Logo>Letmeask</Logo>
           <ButtonMain onClick={handleCreateRoom}>
             <ImgButton src={googleIconImg} alt="Logo do Google" />
             Crie sua sala com o Google
