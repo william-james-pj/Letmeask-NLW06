@@ -4,6 +4,7 @@ import { useAuth } from '../../hooks/useAuth';
 import { useRoom } from '../../hooks/useRoom';
 
 import { database } from '../../services/firebase';
+import { toast } from 'react-toastify';
 
 import { Button } from '../../components/Button';
 import { RoomCode } from '../../components/RoomCode';
@@ -41,12 +42,18 @@ type RoomParams = {
 };
 
 export function Room() {
-  const { user } = useAuth();
+  const { user, signInWithGoogle } = useAuth();
   const params = useParams<RoomParams>();
   const [newQuestion, setNewQuestion] = useState('');
 
   const roomId = params.id;
   const { title, questions, isLoader } = useRoom(roomId);
+
+  async function handleSignIn() {
+    if (!user) {
+      await signInWithGoogle();
+    }
+  }
 
   async function handleSendQuestion(event: FormEvent) {
     event.preventDefault();
@@ -54,7 +61,8 @@ export function Room() {
     if (newQuestion.trim() === '') return;
 
     if (!user) {
-      throw new Error('You must be logged in');
+      toast.error('You must be logged in');
+      return;
     }
     const question = {
       content: newQuestion,
@@ -76,7 +84,8 @@ export function Room() {
     likeId: string | undefined,
   ) {
     if (!user) {
-      throw new Error('You must be logged in');
+      toast.error('You must be logged in');
+      return;
     }
 
     if (likeId) {
@@ -129,7 +138,7 @@ export function Room() {
             ) : (
               <SpanForm>
                 Para enviar uma pergunta,
-                <ButoonForm>faça seu login</ButoonForm>.
+                <ButoonForm onClick={handleSignIn}>faça seu login</ButoonForm>.
               </SpanForm>
             )}
             <Button type="submit" disabled={!user}>

@@ -106,7 +106,7 @@ export const SpanForm = styled.span`
 export const ButoonForm = styled.button`
   background: transparent;
   border: 0;
-  color: ${(props) => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.interactive};
   text-decoration: underline;
   font-size: ${fonts.sm};
   font-weight: 500;

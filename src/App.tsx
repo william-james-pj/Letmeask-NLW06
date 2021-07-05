@@ -1,4 +1,5 @@
 import GlobalStyle from './styles/global';
+import { ToastContainer } from 'react-toastify';
 
 import { AuthContextProvider } from './contexts/AuthContext';
 import { ColorModeContext } from './contexts/ColorModeContext';
@@ -16,6 +17,7 @@ function App() {
           <Routes />
         </AuthContextProvider>
       </Router>
+      <ToastContainer />
     </ColorModeContext>
   );
 }

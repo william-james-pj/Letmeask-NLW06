@@ -2,6 +2,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { useRoom } from '../../hooks/useRoom';
 
 import { database } from '../../services/firebase';
+import { toast } from 'react-toastify';
 
 import { Button } from '../../components/Button';
 import { RoomCode } from '../../components/RoomCode';
@@ -69,7 +70,10 @@ export function AdminRoom() {
 
   if (isLoader) return <Loader />;
   else {
-    if (!isAuthor) history.push('/');
+    if (!isAuthor) {
+      history.push('/');
+      toast.error('You are not the admin of the room');
+    }
   }
 
   return (
