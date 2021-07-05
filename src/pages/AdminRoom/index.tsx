@@ -8,6 +8,7 @@ import { RoomCode } from '../../components/RoomCode';
 import { Question } from '../../components/Question';
 import { IconColorMode } from '../../components/IconColorMode';
 import { NotQuestions } from '../../components/NotQuestions';
+import { Loader } from '../../components/Loader';
 
 import logoImg from '../../assets/images/logo.svg';
 import deleteImg from '../../assets/images/delete.svg';
@@ -38,7 +39,7 @@ export function AdminRoom() {
   const params = useParams<RoomParams>();
 
   const roomId = params.id;
-  const { title, questions } = useRoom(roomId);
+  const { title, questions, isAuthor, isLoader } = useRoom(roomId);
 
   async function handleEndRoom() {
     await database.ref(`rooms/${roomId}`).update({
@@ -64,6 +65,11 @@ export function AdminRoom() {
     await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
       isHighlighted: true,
     });
+  }
+
+  if (isLoader) return <Loader />;
+  else {
+    if (!isAuthor) history.push('/');
   }
 
   return (

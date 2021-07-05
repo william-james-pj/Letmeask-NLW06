@@ -39,6 +39,8 @@ export function useRoom(roomId: string) {
   const { user } = useAuth();
   const [questions, setQuestions] = useState<QuestionType[]>([]);
   const [title, setTitle] = useState('');
+  const [isAuthor, setIsAuthor] = useState(false);
+  const [isLoader, setIsLoader] = useState(true);
 
   function organizeQuestions(question1: QuestionType, question2: QuestionType) {
     if (question2.isHighlighted && !question2.isAnswered) return 1;
@@ -73,8 +75,10 @@ export function useRoom(roomId: string) {
 
       parsedQuestions.sort(organizeQuestions);
 
+      setIsAuthor(databaseRoom.authorId === user?.id);
       setTitle(databaseRoom.title);
       setQuestions(parsedQuestions);
+      setIsLoader(false);
     });
 
     return () => {
@@ -82,5 +86,5 @@ export function useRoom(roomId: string) {
     };
   }, [roomId, user?.id]);
 
-  return { questions, title };
+  return { questions, title, isAuthor, isLoader };
 }

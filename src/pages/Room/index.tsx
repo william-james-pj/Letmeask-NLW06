@@ -10,6 +10,7 @@ import { RoomCode } from '../../components/RoomCode';
 import { Question } from '../../components/Question';
 import { IconColorMode } from '../../components/IconColorMode';
 import { NotQuestions } from '../../components/NotQuestions';
+import { Loader } from '../../components/Loader';
 
 import logoImg from '../../assets/images/logo.svg';
 
@@ -45,7 +46,7 @@ export function Room() {
   const [newQuestion, setNewQuestion] = useState('');
 
   const roomId = params.id;
-  const { title, questions } = useRoom(roomId);
+  const { title, questions, isLoader } = useRoom(roomId);
 
   async function handleSendQuestion(event: FormEvent) {
     event.preventDefault();
@@ -88,6 +89,8 @@ export function Room() {
       });
     }
   }
+
+  if (isLoader) return <Loader />;
 
   return (
     <Container>
