@@ -51,7 +51,7 @@ Este é um projeto desenvolvido durante a Next Level Week Together, apresentada 
 Acesse a versão demo nesse [link](https://newletmeask.web.app) e utilize o seguinte código para acessar a sala de teste.
 
 ```sh
-  -MdsNA98midBH37y_sTo
+-MdsNA98midBH37y_sTo
 ```
 
 ### Construído com
